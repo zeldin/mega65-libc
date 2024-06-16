@@ -221,8 +221,8 @@ unsigned char fc_nyblswap(unsigned char in) // oh why?!
                  "asl a\n"
                  "adc #$80\n"
                  "rol a\n"
-                 "st%0" ::"a"(swp)
-                 : "a");
+                 "st%0"
+                 : "+a"(swp));
 #else
 #pragma GCC warning "fc_nyblswap() is not implemented for this compiler"
 #endif
