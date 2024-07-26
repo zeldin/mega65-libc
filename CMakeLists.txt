@@ -25,7 +25,7 @@ set(CLANG_WARNINGS
 )
 
 install(FILES ${CMAKE_SOURCE_DIR}/cmake/mega65libcConfig.cmake
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mega65libc)
+    DESTINATION lib/cmake/mega65libc)
 
 add_subdirectory(src)
 add_subdirectory(doc)
