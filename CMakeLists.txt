@@ -24,7 +24,7 @@ set(CLANG_WARNINGS
     -Wno-language-extension-token
 )
 
-install(FILES cmake/mega65libcConfig.cmake
+install(FILES ${CMAKE_SOURCE_DIR}/cmake/mega65libcConfig.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/mega65libc)
 
 add_subdirectory(src)
