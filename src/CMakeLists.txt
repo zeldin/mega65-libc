@@ -22,6 +22,7 @@ set(headers
     ${CMAKE_SOURCE_DIR}/include/mega65/conio.h
     ${CMAKE_SOURCE_DIR}/include/mega65/debug.h
     ${CMAKE_SOURCE_DIR}/include/mega65/dirent.h
+    ${CMAKE_SOURCE_DIR}/include/mega65/fcio.h
     ${CMAKE_SOURCE_DIR}/include/mega65/fileio.h
     ${CMAKE_SOURCE_DIR}/include/mega65/hal.h
     ${CMAKE_SOURCE_DIR}/include/mega65/math.h
