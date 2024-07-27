@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
+set(LLVM_MOS_PLATFORM mega65)
+find_package(llvm-mos-sdk REQUIRED)
 project(mega65libc VERSION 0.3.0 LANGUAGES C ASM)
-
-# ---- Include guards ----
 
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
     message(
@@ -9,9 +9,6 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
         "In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there."
     )
 endif()
-
-set(LLVM_MOS_PLATFORM mega65)
-find_package(llvm-mos-sdk REQUIRED)
 
 enable_testing()
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
