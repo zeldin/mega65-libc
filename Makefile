@@ -5,11 +5,15 @@
 # PGS 20240118
 #
 
+# Change this to the path of the llvm-mos-sdk
+# (download from https://github.com/llvm-mos/llvm-mos-sdk)
+LLVM_MOS_PATH=/usr/local/llvm-mos
+
 cc65:
 	make -f Makefile_cc65
 
 llvm:
-	cmake -DCMAKE_PREFIX_PATH=../../llvm-mos -B build && ( cd build ; make )
+	cmake -DCMAKE_PREFIX_PATH=$(LLVM_MOS_PATH) -B build && ( cd build ; make )
 
 clean:
 	make -f Makefile_cc65 clean
