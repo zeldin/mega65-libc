@@ -40,8 +40,10 @@
 #define SCREEN_RAM_BASE_B2 (PEEK(VIC_BASE + 0x62))
 #define SCREEN_RAM_BASE_B3 (PEEK(VIC_BASE + 0x63) & 7) // upper nybble
 #define SCREEN_RAM_BASE                                                        \
-    (((unsigned long)SCREEN_RAM_BASE_B3 << 24) | ((unsigned long)SCREEN_RAM_BASE_B2 << 16)       \
-        | ((unsigned long)SCREEN_RAM_BASE_B1 << 8) | ((unsigned long)SCREEN_RAM_BASE_B0))
+    (((unsigned long)SCREEN_RAM_BASE_B3 << 24)                                 \
+        | ((unsigned long)SCREEN_RAM_BASE_B2 << 16)                            \
+        | ((unsigned long)SCREEN_RAM_BASE_B1 << 8)                             \
+        | ((unsigned long)SCREEN_RAM_BASE_B0))
 #define COLOR_RAM_BASE 0xFF80000UL
 
 #define PRINTF_IN_FORMAT_SPEC 0x1
@@ -216,7 +218,7 @@ char* petsciitoscreencode_s(char* s)
     char* src = s;
     char* dest = p2sbuf;
     // This loop intentionally uses assignment in the test condition
-    while ( (*dest++ = petsciitoscreencode(*src++)) )
+    while ((*dest++ = petsciitoscreencode(*src++)))
         ;
     return p2sbuf;
 }
@@ -556,7 +558,8 @@ void cputhex(unsigned long n, unsigned char prec)
     cputs(&buffer[8 - prec]);
 }
 
-void cputdec(unsigned long n, unsigned char padding __attribute__((unused)), unsigned char leadingZeros)
+void cputdec(unsigned long n, unsigned char padding __attribute__((unused)),
+    unsigned char leadingZeros)
 {
     unsigned char buffer[11];
     unsigned char rem = 0;
@@ -762,7 +765,7 @@ unsigned char cinput(
 
 void setpalbank(unsigned char bank)
 {
-    POKE(0xD070U, (PEEK(0xD070U) & ~0x30) | (unsigned char)((bank & 0x3) << 4) );
+    POKE(0xD070U, (PEEK(0xD070U) & ~0x30) | (unsigned char)((bank & 0x3) << 4));
 }
 
 void setpalbanka(unsigned char bank)
@@ -782,7 +785,7 @@ unsigned char getpalbanka(void)
 
 void setmapedpal(unsigned char bank)
 {
-    POKE(0xD070U, (PEEK(0xD070U) & ~0xC0) | (unsigned char)((bank & 0x3) << 6) );
+    POKE(0xD070U, (PEEK(0xD070U) & ~0xC0) | (unsigned char)((bank & 0x3) << 6));
 }
 
 unsigned char getmapedpal(void)
