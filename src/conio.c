@@ -539,6 +539,8 @@ unsigned char _cprintf(
 
         fmt++;
     }
+    // PGS 20240117 - What is the correct return value?
+    return 0;
 }
 
 void cputhex(unsigned long n, unsigned char prec)
