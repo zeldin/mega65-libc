@@ -65,18 +65,18 @@ fcioConf stdConfig = {
 
 #define VIC_BASE 0xD000UL
 
-#define VIC2CTRL (*(unsigned char*)(0xd016))
-#define VIC4CTRL (*(unsigned char*)(0xd054))
-#define VIC3CTRL (*(unsigned char*)(0xd031))
-#define LINESTEP_LO (*(unsigned char*)(0xd058))
-#define LINESTEP_HI (*(unsigned char*)(0xd059))
-#define CHRCOUNT (*(unsigned char*)(0xd05e))
-#define HOTREG (*(unsigned char*)(0xd05d))
+#define VIC2CTRL (*(volatile unsigned char*)(0xd016))
+#define VIC4CTRL (*(volatile unsigned char*)(0xd054))
+#define VIC3CTRL (*(volatile unsigned char*)(0xd031))
+#define LINESTEP_LO (*(volatile unsigned char*)(0xd058))
+#define LINESTEP_HI (*(volatile unsigned char*)(0xd059))
+#define CHRCOUNT (*(volatile unsigned char*)(0xd05e))
+#define HOTREG (*(volatile unsigned char*)(0xd05d))
 
-#define SCNPTR_0 (*(unsigned char*)(0xd060))
-#define SCNPTR_1 (*(unsigned char*)(0xd061))
-#define SCNPTR_2 (*(unsigned char*)(0xd062))
-#define SCNPTR_3 (*(unsigned char*)(0xd063))
+#define SCNPTR_0 (*(volatile unsigned char*)(0xd060))
+#define SCNPTR_1 (*(volatile unsigned char*)(0xd061))
+#define SCNPTR_2 (*(volatile unsigned char*)(0xd062))
+#define SCNPTR_3 (*(volatile unsigned char*)(0xd063))
 
 // special graphics characters
 #define H_COLUMN_END 4
